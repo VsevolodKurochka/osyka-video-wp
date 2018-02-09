@@ -134,10 +134,15 @@ add_action( 'wp_enqueue_scripts', 'videooperator_scripts' );
 //  */
 // require get_template_directory() . '/inc/custom-header.php';
 
-// /**
-//  * Custom template tags for this theme.
-//  */
-// require get_template_directory() . '/inc/template-tags.php';
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require_once get_template_directory() . '/tgm/connect.php';
 
 // /**
 //  * Functions which enhance the theme by hooking into WordPress.
