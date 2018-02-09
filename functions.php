@@ -146,10 +146,15 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require_once get_template_directory() . '/tgm/connect.php';
 
-// /**
-//  * Functions which enhance the theme by hooking into WordPress.
-//  */
-// require get_template_directory() . '/inc/template-functions.php';
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/admin/admin.php';
 
 // /**
 //  * Customizer additions.

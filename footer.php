@@ -17,12 +17,7 @@
 		<div class="footer__container container">
 			<p class="footer__title">© <?php echo date("Y") ?>. All rights reserverd</p>
 			<div class="footer__social">
-				<ul class="social social_white">
-					<li class="social__item"><a class="social__item-link" href="#"><i class="fab fa-facebook-f"></i></a>
-					</li>
-					<li class="social__item"><a class="social__item-link" href="#"><i class="fab fa-instagram"></i></a>
-					</li>
-				</ul>
+				<?php social('social_white') ?>
 			</div>
 		</div>
 	</footer>
