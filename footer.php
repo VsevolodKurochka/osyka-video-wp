@@ -13,19 +13,19 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'videooperator' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'videooperator' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'videooperator' ), 'videooperator', '<a href="http://underscores.me/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer class="footer">
+		<div class="footer__container container">
+			<p class="footer__title">© <?php echo date("Y") ?>. All rights reserverd</p>
+			<div class="footer__social">
+				<ul class="social social_white">
+					<li class="social__item"><a class="social__item-link" href="#"><i class="fab fa-facebook-f"></i></a>
+					</li>
+					<li class="social__item"><a class="social__item-link" href="#"><i class="fab fa-instagram"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
