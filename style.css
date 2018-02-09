@@ -1370,6 +1370,14 @@ input[type="checkbox"]:checked + .control__indicator:before {
   color: #ff6f00;
 }
 
+.social_black .social__item-link {
+  color: #000;
+}
+
+.social_black .social__item-link:hover {
+  color: #ff6f00;
+}
+
 .group {
   margin-bottom: 30px;
 }
@@ -2041,7 +2049,6 @@ input[type="checkbox"]:checked + .control__indicator:before {
 .contact {
   padding-top: 45px;
   padding-bottom: 45px;
-  margin-top: 45px;
   background-color: #003db3;
 }
 
@@ -2171,6 +2178,7 @@ input[type="checkbox"]:checked + .control__indicator:before {
   font-size: 20px;
   font-weight: 300;
   line-height: 1.1;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
