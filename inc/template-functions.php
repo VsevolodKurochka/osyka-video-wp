@@ -1,5 +1,51 @@
 <?php
 
+function gallery_section($post_type_name){
+	$args = array(
+		'post_type'   		=> $post_type_name,
+		'post_status' 		=> 'publish',
+		'posts_per_page'	=> 4
+	);
+
+	$post_type_object = get_post_type_object( $post_type_name );
+
+	$post_type_query = new WP_Query( $args );
+
+	if( $post_type_query->have_posts() && get_field($post_type_name . '_show') ) : 
+
+?>
+<section class="gallery">
+	<div class="container">
+		<div class="group group_inline">
+			<h3 class="group__title"><?php the_field($post_type_name . '_title') ?></h3>
+			<p class="group__description"><?php echo $post_type_object->description; ?></p>
+		</div>
+	</div>
+	<div class="gallery__row flex">
+		<?php
+			$increment = 0;
+			while( $post_type_query->have_posts() ) : 
+				$post_type_query->the_post();
+
+				if($increment == 0) :
+					gallery_fluid();
+				else:
+					gallery_default($increment);
+				endif;
+
+				$increment++;
+      endwhile;
+      wp_reset_postdata();
+		?>
+		
+	</div>
+	<div class="gallery__footer"><a class="btn btn_border-brand-2 effect effect_bounce-top" href="<?php echo get_post_type_archive_link($post_type_name); ?>">View More</a></div>
+</section>
+	
+<?php
+	endif;
+}
+
 function gallery_default($increment){
 	$return = '<div class="gallery__item gallery__item_default">
 	<a class="gallery__item-link" data-action="modal" data-video="https://www.youtube.com/embed/'.get_field('project_video').'?rel=0&amp;amp;showinfo=0&amp;amp;autoplay=1" data-open="#modal-music-video-'.$increment.'"></a>

@@ -6,7 +6,11 @@ Template Name: Front Page
 
 get_header();
 
-get_template_part('sections/music-videos');
+gallery_section('music_videos');
+
+gallery_section('films');
+
+gallery_section('commercial');
 
 get_template_part('sections/contact');
 

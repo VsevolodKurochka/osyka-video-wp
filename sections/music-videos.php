@@ -7,8 +7,9 @@
 	$music_videos_object = get_post_type_object( $gallery_name );
 
 	$args = array(
-		'post_type'   => $gallery_name,
-		'post_status' => 'publish'
+		'post_type'   		=> $gallery_name,
+		'post_status' 		=> 'publish',
+		'posts_per_page'	=> 4
 	);
 
 	$music_videos = new WP_Query( $args );
@@ -40,6 +41,6 @@
 		?>
 		
 	</div>
-	<div class="gallery__footer"><a class="btn btn_border-brand-2 effect effect_bounce-top" href="<?php echo get_post_type_archive_link('music_videos'); ?>">View More</a></div>
+	<div class="gallery__footer"><a class="btn btn_border-brand-2 effect effect_bounce-top" href="<?php echo get_post_type_archive_link($gallery_name); ?>">View More</a></div>
 </section>
 <?php endif; ?>
