@@ -33,14 +33,14 @@
 		<div class="nav nav_style" id="js-navigation">
 			<div class="nav__container container">
 				<div class="nav__row row">
-					<div class="nav__logo col-8 col-md-3">
+					<div class="nav__logo col-8 col-md-2">
 						<button class="hamburger hamburger_effect-2" type="button" id="js-nav-hamburger"><span class="hamburger__lines"><span></span><span></span><span></span><span></span></span>
 						</button>
 						<div class="nav__logo-content">
-							<p class="nav__logo-content-text"><span>Oleksii</span> Osyka</p>
+							<a href="<?php echo site_url(); ?>" class="nav__logo-content-text"><span>Oleksii</span> Osyka</a>
 						</div>
 					</div>
-					<nav class="nav__menu col-12 col-md-10" id="js-navigation-menu">
+					<nav class="nav__menu col-12 col-md-8" id="js-navigation-menu">
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'menu-1',
@@ -72,7 +72,20 @@
 					</iframe>
 				</div>
 			<?php	else: ?>
-				<?php echo the_post_thumbnail('full', array('class'=> 'header__image')); ?>
+
+				<?php
+					if( is_post_type_archive() ) : 
+
+						$post_archive_object = get_queried_object();
+
+						print_r($post_archive_object);
+
+				?>
+
+				<?php else: ?>
+					<?php echo the_post_thumbnail('full', array('class'=> 'header__image')); ?>
+				<?php endif; ?>
+				
 			<?php endif; ?>
 			<div class="header__container container">
 				<h1 class="header__title header__title_big">

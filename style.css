@@ -1652,7 +1652,6 @@ input[type="checkbox"]:checked + .control__indicator:before {
 }
 
 .nav__logo {
-  display: none;
   font-size: 0;
 }
 
@@ -1666,6 +1665,7 @@ input[type="checkbox"]:checked + .control__indicator:before {
   font-weight: 100;
   color: #fff;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .nav__logo-content-text span {
@@ -1673,9 +1673,6 @@ input[type="checkbox"]:checked + .control__indicator:before {
 }
 
 @media (max-width: 1024px) {
-  .nav__logo {
-    display: block;
-  }
   .nav__logo img {
     max-height: 28px;
     vertical-align: middle;
