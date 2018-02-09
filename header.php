@@ -56,11 +56,23 @@
 		</div>
 	</div>
 	<div id="page" class="site">
-		<header class="header header_full header_background">
-			<div class="header__video">
-				<iframe class="header__video-iframe" src="https://www.youtube.com/embed/<?php the_field('youtube_video'); ?>?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;loop=1&amp;playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen="allowfullscreen">
-				</iframe>
-			</div>
+		<?php
+			if( is_page_template('template-main.php') ) : 
+				$header_class = 'header_full';
+			else:
+				$header_class = 'header_small';
+			endif;
+		?>
+		<header class="header header_background <?php echo $header_class; ?>">
+			
+			<?php if( is_page_template('template-main.php') ) : ?>
+				<div class="header__video">
+					<iframe class="header__video-iframe" src="https://www.youtube.com/embed/<?php the_field('youtube_video'); ?>?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;loop=1&amp;playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen="allowfullscreen">
+					</iframe>
+				</div>
+			<?php	else: ?>
+				<?php echo the_post_thumbnail('full', array('class'=> 'header__image')); ?>
+			<?php endif; ?>
 			<div class="header__container container">
 				<?php if(get_field('title')) : ?>
 					<h1 class="header__title header__title_big"><?php the_field('title'); ?></h1>
