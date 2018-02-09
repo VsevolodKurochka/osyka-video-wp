@@ -74,17 +74,16 @@
 			<?php	else: ?>
 
 				<?php
-					if( is_post_type_archive() ) : 
+					if( has_post_thumbnail() ) : 
 
-						$post_archive_object = get_queried_object();
+						echo the_post_thumbnail('full', array('class'=> 'header__image'));
 
-						print_r($post_archive_object);
+					else:
 
+						echo '<img class="header__image" src="'.get_template_directory_uri().'/img/music.jpg" alt="">';
+
+					endif;
 				?>
-
-				<?php else: ?>
-					<?php echo the_post_thumbnail('full', array('class'=> 'header__image')); ?>
-				<?php endif; ?>
 				
 			<?php endif; ?>
 			<div class="header__container container">
