@@ -66,8 +66,9 @@
 		<header class="header header_background <?php echo $header_class; ?>">
 			
 			<?php if( is_page_template('template-main.php') || is_404()) : ?>
+				<?php $youtube_link = get_option('contact_info_setting') ?>
 				<div class="header__video">
-					<iframe class="header__video-iframe" src="https://www.youtube.com/embed/<?php the_field('youtube_video'); ?>?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;loop=1&amp;playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen="allowfullscreen">
+					<iframe class="header__video-iframe" src="https://www.youtube.com/embed/<?php echo $youtube_link['video']; ?>?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;loop=1&amp;mute=1" frameborder="0" allowfullscreen="allowfullscreen">
 					</iframe>
 				</div>
 			<?php	else: ?>
@@ -87,7 +88,7 @@
 
 					elseif( is_404() ) :
 
-						_e('404');
+						_e('<strong>404</strong>');
 
 					else:
 						the_title();

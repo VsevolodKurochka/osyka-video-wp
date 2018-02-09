@@ -18,6 +18,19 @@ function contact_info_init() {
 	);
 
 	add_settings_field( 
+		'video', 
+		__( 'Youtube Video', 'v' ), 
+		'v_text_field_render', 
+		'adventure_contact_info_setting',
+		'adventure_contact_info_section',
+		array(
+			'name'			=> 'video',
+			'option'		=> 'contact_info_setting',
+			'classname'	=> ''
+		)
+	);
+
+	add_settings_field( 
 		'facebook', 
 		__( 'Facebook', 'v' ), 
 		'v_text_field_render', 
