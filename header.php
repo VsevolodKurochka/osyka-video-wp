@@ -75,20 +75,40 @@
 			<?php endif; ?>
 			<div class="header__container container">
 				<h1 class="header__title header__title_big">
-					<?php 
-					if(get_field('title')) :
-						the_field('title'); 
-					elseif(is_post_type_archive()) :
+					<?php
+
+					if( get_field('title') ) :
+
+						the_field('title');
+
+					elseif( is_post_type_archive() ) :
+
 						post_type_archive_title();
+
 					else:
 						the_title();
+
 					endif;
 					?>
 				</h1>
 				
-				<?php if(get_field('subtitle')) : ?>
-					<h2 class="header__subtitle"><?php the_field('subtitle'); ?></h2>
-				<?php endif; ?>
+				<h2 class="header__subtitle">
+					<?php
+
+						if( get_field('subtitle') ) :
+
+							the_field('subtitle');
+
+						elseif( is_post_type_archive() ) :
+
+							the_archive_description();
+
+						// else:
+						// 	the_title();
+
+						endif;
+					?>
+				</h2>
 
 				<?php if(get_field('button_header')) :?>
 					<button class="btn btn_border-white effect effect_bounce-top"><?php the_field('button_header'); ?></button>
