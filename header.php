@@ -74,9 +74,17 @@
 				<?php echo the_post_thumbnail('full', array('class'=> 'header__image')); ?>
 			<?php endif; ?>
 			<div class="header__container container">
-				<?php if(get_field('title')) : ?>
-					<h1 class="header__title header__title_big"><?php the_field('title'); ?></h1>
-				<?php endif; ?>
+				<h1 class="header__title header__title_big">
+					<?php 
+					if(get_field('title')) :
+						the_field('title'); 
+					elseif(is_post_type_archive()) :
+						post_type_archive_title();
+					else:
+						the_title();
+					endif;
+					?>
+				</h1>
 				
 				<?php if(get_field('subtitle')) : ?>
 					<h2 class="header__subtitle"><?php the_field('subtitle'); ?></h2>
