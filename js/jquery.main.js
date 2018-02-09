@@ -1,6 +1,6 @@
 'use strict';
 
-$(document).ready(function () {
+jQuery(document).ready(function ($) {
 
 	function scroll(scrollLink, speed) {
 		$('html, body').animate({

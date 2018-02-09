@@ -119,10 +119,12 @@ add_action( 'widgets_init', 'videooperator_widgets_init' );
 function videooperator_scripts() {
 	wp_enqueue_style( 'videooperator-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'videooperator-fonts', 'https://fonts.googleapis.com/css?family=Poppins:100,400,700');
+
+	wp_enqueue_style( 'videooperator-fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
+
 	wp_enqueue_script( 'videooperator-libs', get_template_directory_uri() . '/js/libs.min.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'videooperator-jquery-main', get_template_directory_uri() . '/js/jquery.main.js', array(), '20151215', true );
-
+	
 	wp_enqueue_script( 'videooperator-jquery-vanilla', get_template_directory_uri() . '/js/vanilla.main.js', array(), '20151215', true );
 
 	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
