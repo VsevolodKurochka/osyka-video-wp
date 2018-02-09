@@ -1412,7 +1412,7 @@ input[type="checkbox"]:checked + .control__indicator:before {
   }
 }
 
-.group__title span {
+.group__title strong {
   font-weight: bold;
   color: #0057ff;
 }

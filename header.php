@@ -63,13 +63,21 @@
 	<div id="page" class="site">
 		<header class="header header_full header_background">
 			<div class="header__video">
-				<iframe class="header__video-iframe" src="https://www.youtube.com/embed/W0LHTWG-UmQ?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;loop=1&amp;playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen="allowfullscreen">
+				<iframe class="header__video-iframe" src="https://www.youtube.com/embed/<?php the_field('youtube_video'); ?>?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;loop=1&amp;playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen="allowfullscreen">
 				</iframe>
 			</div>
 			<div class="header__container container">
-				<h1 class="header__title header__title_big"><strong>Oleksii</strong> Osyka</h1>
-				<h2 class="header__subtitle">DP, Cinematographer, Director, Cameraman</h2>
-				<button class="btn btn_border-white effect effect_bounce-top">Contact Me</button>
+				<?php if(get_field('title')) : ?>
+					<h1 class="header__title header__title_big"><?php the_field('title'); ?></h1>
+				<?php endif; ?>
+				
+				<?php if(get_field('subtitle')) : ?>
+					<h2 class="header__subtitle"><?php the_field('subtitle'); ?></h2>
+				<?php endif; ?>
+
+				<?php if(get_field('button_header')) :?>
+					<button class="btn btn_border-white effect effect_bounce-top"><?php the_field('button_header'); ?></button>
+				<?php endif; ?>
 			</div>
 		</header>
 
