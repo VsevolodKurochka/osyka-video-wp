@@ -28,16 +28,18 @@ get_header(); ?>
 
 					$increment++;
 
-				endwhile;
+				endwhile; ?>
+			
+		</div>
+			<?php
 
-				the_posts_navigation();
+				wp_pagenavi();
 
 			else :
 
 				get_template_part( 'template-parts/content', 'none' );
 
 			endif; ?>
-		</div>
 	</section>
 
 <?php

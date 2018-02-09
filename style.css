@@ -2509,6 +2509,98 @@ input[type="checkbox"]:checked + .control__indicator:before {
   box-shadow: 0px 2px 25.5px 4.5px rgba(0, 0, 0, .2);
 }
 
+.wp-pagenavi{
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.wp-pagenavi .previouspostslink:after,
+.wp-pagenavi .nextpostslink:after,
+.wp-pagenavi a{
+  transition: all ease 0.5s;
+}
+.error-404__section {
+  padding: 170px 0 200px 0;
+}
+.wp-pagenavi .current,
+.wp-pagenavi a{
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.wp-pagenavi .current,
+.wp-pagenavi a.page{
+  font-size: 24px;
+}
+.wp-pagenavi .current,
+.wp-pagenavi a.page{
+  padding: 5px 7.5px;
+}
+
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .nextpostslink,
+.wp-pagenavi .current{
+  color: #000;
+}
+
+.wp-pagenavi a.page{
+  color: #e4e5e7;
+}
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .nextpostslink{
+  position: relative;
+  font-size: 18px;
+}
+
+.wp-pagenavi .previouspostslink:after,
+.wp-pagenavi .nextpostslink:after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 33px;
+  height: 24px;
+  background: url('img/arrow_def.png') 0 0 no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.wp-pagenavi .previouspostslink{
+  margin-right: 20px;
+  padding-left: 55px;
+}
+
+.wp-pagenavi .previouspostslink:after{
+  left: 0;
+  -webkit-transform: translateY(-50%) scale(-1,1);
+      -ms-transform: translateY(-50%) scale(-1,1);
+          transform: translateY(-50%) scale(-1,1); 
+}
+
+.wp-pagenavi .nextpostslink {
+  margin-left: 20px;
+  padding-right: 55px;
+}
+
+.wp-pagenavi .nextpostslink:after{
+  right: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); 
+}
+
+.wp-pagenavi a:hover{
+  color: #e92e2e;
+}
+
+.wp-pagenavi .previouspostslink:hover:after{
+  left: -5px;
+}
+.wp-pagenavi .nextpostslink:hover:after{
+  right: -5px;
+}
+
 
 .modal, .modal_showing {
   -webkit-transition: all .5s ease;

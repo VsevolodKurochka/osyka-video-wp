@@ -65,7 +65,7 @@
 		?>
 		<header class="header header_background <?php echo $header_class; ?>">
 			
-			<?php if( is_page_template('template-main.php') ) : ?>
+			<?php if( is_page_template('template-main.php') || is_404()) : ?>
 				<div class="header__video">
 					<iframe class="header__video-iframe" src="https://www.youtube.com/embed/<?php the_field('youtube_video'); ?>?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;loop=1&amp;playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen="allowfullscreen">
 					</iframe>
@@ -85,6 +85,10 @@
 
 						post_type_archive_title();
 
+					elseif( is_404() ) :
+
+						_e('404');
+
 					else:
 						the_title();
 
@@ -102,6 +106,10 @@
 						elseif( is_post_type_archive() ) :
 
 							the_archive_description();
+
+						elseif( is_404() ) :
+
+							_e('This page was not found.');
 
 						// else:
 						// 	the_title();
